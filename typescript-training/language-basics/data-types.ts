@@ -1,24 +1,10 @@
-//Syntax to store the data in JavaScript 
-//Syntax : Declaration Variable = Data ;
+//Syntax to store data :
+//Declaration variable :datatype = Data;
 
-//Based on the nature of the data types, data types in JavaScript are divided into two different categories. 
+//In TypeScript, There are two different categories of data types. 
 
-//1. Primitive data types => Immutable data types: meaning, can't change the original value 
-//2. Non-primitive data types => Mutable data types: meaning the original value can be modified. 
-
-// Immutable data types 
-// let a = 10;
-// let b = a + 10;
-// console.log(a);
-
-
-//Mutable Datatype 
-// let empData = {
-//     "name": "Bharath",
-//     "id": 1234
-// }
-// empData.age = 35;
-// console.log(empData);
+//1. Primitive Data Types
+//2. Non-Primitive Data Types
 
 /*******************************/
 /****Primitive-Datatypes********/
@@ -26,67 +12,55 @@
 
 //number => The data type that can store numbers with decimals or without decimals is called the number data type. 
 //Number should be stored without any quotation. 
+let num1: number = 10;
+let num2: number = 10.65;
 
-let num1 = 10;
-let num2 = 10.65;
-num1 ="Bharath";
-
-console.log(typeof num1);
-console.log(typeof num2);
-
+num1 = "Bharath";
+console.log(num1);
 
 //string => The Datatype that can store a collection of characters 
 //String should be stored always within the quotations: single quotes, double quotes, or backticks. 
-
-
-let name1 = '"Mr" Bharath Reddy';
-let name2 = "'Mr' Bharath Reddy";
+let name1: string = '"Mr" Bharath Reddy';
+let name2: string = "'Mr' Bharath Reddy";
 console.log(name1);
 console.log(name2);
 
-console.log(typeof name1);
-console.log(typeof name2);
-
 //backticks will be used to store the dynamic string. 
-let firstName = "Shobhit";
-let lastName = "Gupta";
+let firstName: string = "Shobhit";
+let lastName: string = "Gupta";
 
 //normal
-let empInfo = "Employee first name is "+firstName+", and last name is "+lastName;
+let empInfo: string = "Employee first name is " + firstName + ", and last name is " + lastName;
 
 //with-backtics
-let newEmpInfo = `Employee first name is ${firstName}, and last name is ${lastName}`;
+let newEmpInfo: string = `Employee first name is ${firstName}, and last name is ${lastName}`;
 console.log(newEmpInfo);
 
 //boolean => A boolean represents the result of a condition in the form of true or false. 
-let isJavaScriptFun = true;
-let isSkyGreen = false;
-
-console.log(typeof isJavaScriptFun);
-console.log(typeof isSkyGreen);
+let isJavaScriptFun: boolean = true;
+let isSkyGreen: boolean = false;
 
 //undefined => `undefined` represents a variable that has been declared but not assigned to any value yet. 
-let empAge ;
+let empAge: undefined;
 console.log(empAge);
 
 //null => `null` represents a variable that has been declared and assigned to a `null` value intentionally. 
-let salary = 100000;
-salary= null;
+let salary: null = null;
 console.log(salary);
 
-//symbol : Unique hidden identifier or variable inside an object 
+//union ( | )
+//Union represents more than one data type within the same variable. 
+let address: string | number | boolean;
+address = "Hyderabad";
+address = true;
+address = 500081;
 
-let countryOfOrigin = Symbol();
-let productInfo = {
-    "productName": "Laptop",
-    "productId": 1234,
-    [countryOfOrigin]: "China",
-    "countryOfOrigin": "India"
-}
-
-console.log(productInfo);
-console.log(productInfo.countryOfOrigin);
-console.log(productInfo[countryOfOrigin]);
+//any
+//`any` represents any data type is allowed. Basically, we are removing the type safety from TypeScript. 
+let empAddress: any;
+empAddress = "Hyderabad";
+empAddress = true;
+empAddress = 500081;
 
 /*******************************/
 /****Non-Primitive-Datatypes****/
@@ -94,27 +68,28 @@ console.log(productInfo[countryOfOrigin]);
 
 //Object => Object Datatype represents a collection of key-value pairs stored together. 
 
+interface empInfo {
+    "empName": string,
+    "empId": number,
+    "visaStatus": boolean,
+    "address": {
+        "city": string,
+        "state": string,
+        "country": string
+    }
+}
 
-//Before Object
-let empName = "Bharath Reddy";
-let empId = 1234;
-let visaStatus = true;
-let city = "Kadapa";
-let state = "Andrapradesh";
-let country = "India";
-
-//After Object
-let empData = {
-    "empName" :"Bharath Reddy",
-    "empId" : 1234,
-    "visaStatus" : true,
-    "address" : {
-        "city" : "Kadapa",
-        "state" : "Andrapradesh",
-        "country" : "India"
+//Object
+let empData: empInfo = {
+    "empName": "Bharath Reddy",
+    "empId": 1234,
+    "visaStatus": true,
+    "address": {
+        "city": "Kadapa",
+        "state": "Andrapradesh",
+        "country": "India"
     }
 };
-
 
 console.log(empData);
 
@@ -126,15 +101,9 @@ console.log(empData["address"]["city"]);
 
 //Array =>Array Datatype can represent a collection of values stored together.
 
-//Before Array
-let fruit1 = "Apple";
-let fruit2 = "Banana";
-let fruit3 = "Orange";
-
-//After Array
-let fruits = ["Apple", "Banana", "Orange"];
-let prices = [100, 200, 300];
-let fruitsAndPrices = ["Apple", 100, "Banana", 200, "Orange", 300];
+let fruits: string[] = ["Apple", "Banana", "Orange"];
+let prices: number[] = [100, 200, 300];
+let fruitsAndPrices: (string | number)[] = ["Apple", 100, "Banana", 200, "Orange", 300];
 
 console.log(fruits);
 console.log(prices);
@@ -146,37 +115,43 @@ console.log(prices[1]); // 200
 console.log(fruitsAndPrices[2]); // Banana
 console.log(fruitsAndPrices[3]); // 200
 
+//tuple : Tuple is an ordered array. 
+
+// tuple vs normal array
+
+//Problem statement : Store the employee name, the employee ID, and visa status within the array. 
+
+//Array :
+let employeeInfo: (string | number | boolean)[] = ["Bharath", 1234, true, 9553220022];
+
+//Tuple
+let employeeInfoTuple: [string, number, boolean] = ["Bharath", 1234, true];
 
 //Function => A function represents a block of code or a collection of statements written together to complete a specific task. 
 
-function launchBrowserAndLogin(browserName, url) {
+function launchBrowserAndLogin(browserName: string, url: string): void {
     console.log(`Launch the ${browserName} Browser`);
     console.log(`Enter the URL: ${url}`);
     console.log("Enter the username as 'Bharath' and password as 'Bharath@123'");
     console.log("Click on the login button");
 }
 
-function logoutAndCloseBrowser() {
+function logoutAndCloseBrowser(): void {
     console.log("Logout from the application");
     console.log("Close the browser");
 }
 
-function getAccountBalance() {
+function getAccountBalance(): number {
     console.log("Navigate to the account balance page");
-    let accountBalance = 100000;
+    let accountBalance: number = 100000;
     return accountBalance;
 }
 
-function getAccountStatement() {
+function getAccountStatement(): (string | number)[] {
     console.log("Navigate to the account statement page");
-    let accountStatement = [
-        { date: "2026-09-01", description: "Deposit", amount: 5000 },
-        { date: "2026-09-05", description: "Withdrawal", amount: 2000 },
-        { date: "2026-09-10", description: "Deposit", amount: 3000 }
-    ];
+    let accountStatement: (string | number)[] = ["savings", 10000, "current", 12000];
     return accountStatement;
 }
-
 
 //Below are three data types from the ES6 version and part of non-primitive data types. 
 
@@ -186,7 +161,7 @@ function getAccountStatement() {
 
 
 //1. Set
-let empIds = new Set();
+let empIds: Set<number> = new Set();
 empIds.add(1234);
 empIds.add(5678);
 empIds.add(7890);
@@ -194,7 +169,7 @@ empIds.add(1234); // Duplicate value, will not be added
 console.log(empIds);
 
 //2. Map (Duplicate keys are not allowed, but duplicate values are allowed. )
-let empDataMap = new Map();
+let empDataMap: Map<string, string | number | boolean> = new Map();
 empDataMap.set("empName", "Bharath Reddy");
 empDataMap.set("empId", 2345);
 empDataMap.set("visaStatus", true);
@@ -212,11 +187,11 @@ let currentDate = date.getDate();
 console.log(currentDate);
 
 //Current month 
-let currentMonth = date.getMonth()+1; //0-11 
+let currentMonth = date.getMonth() + 1; //0-11 
 console.log(currentMonth);
 
 //Current Day
-let currentDay= date.getDay()+1; //0-6
+let currentDay = date.getDay() + 1; //0-6
 console.log(currentDay);
 
 //Current Year
