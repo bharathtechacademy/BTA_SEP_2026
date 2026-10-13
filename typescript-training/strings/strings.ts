@@ -18,7 +18,7 @@
 
 //1.Storing a string inside the variable 
 console.log("1.Storing a string inside the variable");
-let originalString: string = " Username : Admin | Password : admin123 ";
+let originalString: string = " Username : Admin | Password : Admin123 ";
 console.log(originalString);
 
 //2.Method to calculate the total number of characters available inside the string 
@@ -70,3 +70,41 @@ console.log(originalString.toUpperCase());
 //10.Method to convert all the characters of the string into lowercase 
 console.log("10. Method to convert all the characters of the string into lowercase ");
 console.log(originalString.toLowerCase());
+
+//11. Method to extract part of the text from the string 
+console.log("11. Method to extract part of the text from the string ");
+console.log(originalString.substring(12, 17));
+console.log(originalString.substring(31, 39));
+
+//12. Method to extract part of the text from the dynamic string 
+console.log("12. Method to extract part of the text from the dynamic string ");
+let splittedText = originalString.split(' ');
+console.log(splittedText[3]);
+console.log(splittedText[7]);
+
+//13. Method to compare two different string values 
+console.log("13. Method to compare two different string values");
+//== (Loose Quality) 
+//=== (Strict Equality)
+//includes() => Method to check if a string contains a specific substring or not 
+//startsWith() => Method to check if the string starts with a specific substring or not 
+//endsWith() => Method to check if the string ends with a specific substring or not 
+
+let name = "Bharath Reddy";
+console.log(name.includes('hara'));
+console.log(name.startsWith('Bharath'));
+console.log(name.endsWith('Reddy'));
+
+//14. Converting other data types to string 
+console.log("14. Converting other data types to string ");
+let stdCode = 123;
+let ph = 456789;
+let std:string = String(stdCode);
+console.log(std+ph);
+
+//15. Converting string to other data types 
+console.log("15. Converting string to other data types ");
+let balance: string = "Account balance is $19,999.99";
+balance = balance.replace(/[^0-9.]/g, "");
+let bal:number  = parseFloat(balance) ; //parseFloat => decimal , parseInt => without decimals , parseBoolean => boolean
+console.log(bal>=10000);
