@@ -329,3 +329,59 @@ Response headers are all about the additional metadata sent by the server along 
 For each and every invalid request sent by the user, what kind of data and what kind of error message can we expect within the response? 
 
 
+## How to use the Postman tool to validate the API (step by step)
+
+1. Create a new workspace within the Postman tool. 
+
+A workspace is all about a template or a folder inside the Postman tool that is going to allow us to store multiple API collections together in one place. 
+
+2. Create a new environment within the Postman tool. 
+
+Environment is all about a template where we can maintain common data which we can reuse across each and every API request within the specific environment. 
+
+Along with environment variables, we have other categories of variables, like global variables and collection variables. 
+Global variables can be used across the Postman tool. 
+Collection variables can be used within the collection only. 
+And the environment variables can be accessed across the environment by selecting the specific environment template within the Postman tool. 
+
+3. Create a new API collection. 
+
+API collection is all about storing a group of API requests together in a single folder. If required, within the collection, we can add a subfolder as well to segregate the API requests based on the functionality. 
+
+4. Add a new API request within the collection. 
+API request is all about the HTTP request template, which we are going to use to update all the necessary details to complete a specific task via API. 
+
+## API testing in GitHub application 
+
+#### Scenarios to be validated by API testing within the GitHub application 
+
+1. Create a duplicate repository with valid credentials within the GitHub application. 
+2. Create a valid repository with valid credentials within the GitHub application. 
+3. Modify the existing repository with valid credentials within the GitHub application. 
+4. Search and get the updated repository information with valid credentials within the GitHub application. 
+5. Delete the existing repository with valid credentials within the GitHub application. 
+
+
+GitHub Application API documentation : https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10
+
+API documentation for each API request for the above scenarios 
+
+1. Create a duplicate repository with valid credentials in the GitHub application. 
+
+https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10#create-a-repository-for-the-authenticated-user
+
+2. Create a new valid repository with valid credentials in the GitHub application. 
+
+https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10#create-a-repository-for-the-authenticated-user
+
+3. Modify the existing repository with valid credentials in the GitHub application. 
+
+https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10#update-a-repository
+
+4. Search and get the existing repository details with valid credentials in the GitHub application. 
+
+https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10#get-a-repository
+
+5. Delete the existing repository with valid credentials in the GitHub application. 
+
+https://docs.github.com/en/rest/repos/repos?apiVersion=2026-03-10#delete-a-repository
