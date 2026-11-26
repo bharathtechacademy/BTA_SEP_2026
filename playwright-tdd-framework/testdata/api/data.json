@@ -1,0 +1,54 @@
+{
+    "duplicateRepo":{
+        "requestType":"post",
+        "endpoint":"/user/repos",
+        "payload":{
+            "name":"playwright-repo",
+            "description":"duplicate-repo",
+            "private": true
+        },
+        "expStatusCode":422,
+        "expStatusMessage":"Unprocessable Entity",
+        "expErrorMessage":"name already exists on this account",
+        "expErrorMsgType":"string"
+    },   
+     "validRepo":{
+        "requestType":"post",
+        "endpoint":"/user/repos",
+        "payload":{
+            "name":"playwright-repo-valid",
+            "description":"valid-repo",
+            "private": true
+        },
+        "expStatusCode":201,
+        "expStatusMessage":"Created",
+        "expRepoName":"playwright-repo-valid",
+        "expRepoNameType":"string"
+    },   
+     "getRepo":{
+        "requestType":"get",
+        "endpoint":"/repos/bharathtechacademy05/playwright-repo-valid",
+        "expStatusCode":200,
+        "expStatusMessage":"OK",
+        "expRepoName":"playwright-repo-valid",
+        "expRepoNameType":"string"
+    },   
+     "updateRepo":{
+        "requestType":"patch",
+        "endpoint":"/repos/bharathtechacademy05/playwright-repo-valid",
+        "payload":{
+            "description":"updated-repo",
+            "private": false
+        },
+        "expStatusCode":200,
+        "expStatusMessage":"OK",
+        "expRepoDescription":"updated-repo",
+        "expRepoDescriptionType":"string"
+    },   
+     "deleteRepo":{
+        "requestType":"delete",
+        "endpoint":"/repos/bharathtechacademy05/playwright-repo-valid",
+        "expStatusCode":204,
+        "expStatusMessage":"No Content"
+    }
+}

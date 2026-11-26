@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "ui": "npx playwright test tests/ui  --project=chromium  --headed",
-    "debug": "npx playwright test --project=chromium --headed --debug"
+    "debug": "npx playwright test --project=chromium --headed --debug",
+    "api" :"npx playwright test tests/api --project=chromium",
+    "load" :"npx playwright test tests/load --project=chromium"
   },
   "keywords": [],
   "author": "",

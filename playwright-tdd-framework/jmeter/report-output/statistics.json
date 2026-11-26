@@ -1,0 +1,50 @@
+{
+  "HTTP Request (Request to update the GitHub repository details)" : {
+    "transaction" : "HTTP Request (Request to update the GitHub repository details)",
+    "sampleCount" : 200,
+    "errorCount" : 74,
+    "errorPct" : 37.0,
+    "meanResTime" : 535.2600000000006,
+    "medianResTime" : 577.0,
+    "minResTime" : 242.0,
+    "maxResTime" : 1229.0,
+    "pct1ResTime" : 803.9000000000001,
+    "pct2ResTime" : 907.3999999999999,
+    "pct3ResTime" : 1225.5700000000004,
+    "throughput" : 17.08963513628984,
+    "receivedKBytesPerSec" : 114.79937369157481,
+    "sentKBytesPerSec" : 7.0928661454327955
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 400,
+    "errorCount" : 74,
+    "errorPct" : 18.5,
+    "meanResTime" : 469.2075000000003,
+    "medianResTime" : 384.5,
+    "minResTime" : 242.0,
+    "maxResTime" : 1229.0,
+    "pct1ResTime" : 707.2000000000003,
+    "pct2ResTime" : 823.0,
+    "pct3ResTime" : 1129.6900000000003,
+    "throughput" : 33.0660494337439,
+    "receivedKBytesPerSec" : 250.97333339361,
+    "sentKBytesPerSec" : 11.721656195751013
+  },
+  "HTTP Request (Request to get the GitHub repository details)" : {
+    "transaction" : "HTTP Request (Request to get the GitHub repository details)",
+    "sampleCount" : 200,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 403.15499999999975,
+    "medianResTime" : 378.0,
+    "minResTime" : 339.0,
+    "maxResTime" : 858.0,
+    "pct1ResTime" : 424.40000000000003,
+    "pct2ResTime" : 770.8,
+    "pct3ResTime" : 825.95,
+    "throughput" : 17.593244194229413,
+    "receivedKBytesPerSec" : 148.8852343200211,
+    "sentKBytesPerSec" : 5.1714516625615765
+  }
+}
